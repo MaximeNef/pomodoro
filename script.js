@@ -1,5 +1,5 @@
 let start = document.getElementById('start')
-let stop = document.getElementById('stop')
+let pause = document.getElementById('pause')
 let reset  = document.getElementById('reset')
 
 let sminute = document.getElementById('s_minute')
@@ -15,24 +15,14 @@ console.log(startTimer)
 
 
 let videoPlayer = document.getElementById('videoPlayer')
+ videoPlayer.playbackRate = 10; 
 
 start.addEventListener('click',function(){
-    videoPlayer.play()
+    
+    
     if(startTimer === undefined){
-
-      
-       
-
-
-
-
-
-
-
-
-
-
-
+        videoPlayer.play()
+        
         startTimer = setInterval(timer,1000)
        /*  startTimer = setInterval(changeimage,1000) */
       
@@ -52,9 +42,27 @@ reset.addEventListener('click',function(){
     startTimer  = undefined
 
 }) 
-stop.addEventListener('click',function(){
-    stopinterval()
+pause.addEventListener('click',function(){
+   if(startTimer === undefined){
+    
+     setInterval(timer,1000) 
+    
+    videoPlayer.play()
+    startTimer = true
+    console.log ('coucou')
+   }else if(startTimer !== undefined) {
+    startTimer =clearInterval()
+    
+    
+    videoPlayer.pause() 
+     startTimer  =  undefined
+    console.log('caca')
+   }
+  
+
+   /*  stopinterval()
     startTimer = undefined
+    videoPlayer.pause() */
 })
 
 
@@ -76,6 +84,8 @@ function timer(){
     if(sminute.innerText ==0 && sseconde.innerText ==0){
         if(bseconde.innerText !=0){
             bseconde.innerText--;
+            videoPlayer.pause()
+
         }else if (bminute.innerText !=0 && bseconde.innerText ==0){
             bseconde.innerText = 59;
             bminute.innerText--;
@@ -89,6 +99,11 @@ function timer(){
 
         bminute.innerText =5
         bseconde.innerText ="00";
+        
+        videoPlayer.pause()
+        videoPlayer.currentTime = '0'
+        videoPlayer.play()
+
 
         document.getElementById('cycle').innerText ++;
     }
@@ -99,6 +114,7 @@ function timer(){
 function stopinterval(){
     clearInterval(startTimer)
 }
+
 
 
 
