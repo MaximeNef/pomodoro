@@ -1,6 +1,8 @@
 body{
-    background-color: #EEFAFF
-    ; 
+    display: flex;
+    justify-content: center;
+    background-color: #EEFAFF; 
+    height: 100vh;
   }
   
   
@@ -8,29 +10,52 @@ body{
   #backg{
       height:50vh;
       width:50vh;
-      border: 1px solid black;
+     /*  border: 1px solid black; */
   
   }
   
   .container{
       display: grid;
       flex-direction: row;
-      border: 1px solid black;
+     /*  border: 1px solid black; */
   }
   .pomo{
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+       font-size: xx-large; 
       display: flex;
+      flex-direction: row;
       justify-content: space-between;
-      border: 1px solid black;
+      
+     
+    /*   border: 1px solid black; */
   
   }
-  
+  .work , .break , .cycle {
+margin-bottom: 0;
+  }
+  p{
+      margin-bottom: 0;
+  }
   .timer{
       display: flex;
-      border: 1px solid black;
+     
+     /*  border: 1px solid black; */
   
   }
   .btn{
       display: flex;
       flex-direction: row;
-      border: 1px solid black;
+     /*  border: 1px solid black; */
+      border-radius: 500px;
+      height: 70px;
+      width: 70px;
+      align-items: center;
+  }
+  #reset,#pause{
+    justify-content: center;
+  }
+
+  .vivi{
+      display: flex;
+      justify-content: center;
   }
